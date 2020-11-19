@@ -37,7 +37,6 @@ func validAnagram(s1 string, s2 string) bool {
 	for _, i := range secondSplit {
     //If there are any that do not exist within lettersMap, return false
     if lettersMap[i] <= 0{
-      fmt.Println(lettersMap)
       fmt.Println("false")
       return false
     } else {
