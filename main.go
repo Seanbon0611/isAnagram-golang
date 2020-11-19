@@ -36,9 +36,12 @@ func validAnagram(s1 string, s2 string) bool {
   //Iterate through the second string and lookup to see if the lettersMap contains all the the letters within the second string
 	for _, i := range secondSplit {
     //If there are any that do not exist within lettersMap, return false
-    if _, ok := lettersMap[i]; !ok {
+    if lettersMap[i] <= 0{
+      fmt.Println(lettersMap)
       fmt.Println("false")
       return false
+    } else {
+      lettersMap[i] -= 1
     }
 	}
 	fmt.Println("true")
@@ -47,5 +50,5 @@ func validAnagram(s1 string, s2 string) bool {
 
 
 func main() {
-	validAnagram("rat", "gar")
+	validAnagram("rat", "rar")
 }
